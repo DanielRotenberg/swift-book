@@ -180,9 +180,9 @@ func oneMore(than number: Int) -> Int {
     return number + 1
 }
 
-var myNumber = 1
-myNumber = oneMore(than: myNumber)
-print(myNumber)
+var yoNumber = 1
+yoNumber = oneMore(than: yoNumber)
+print(yoNumber)
 // Prints "2"
 ```
 
@@ -194,9 +194,9 @@ print(myNumber)
          return number + 1
      }
 
-  -> var myNumber = 1
-  -> myNumber = oneMore(than: myNumber)
-  -> print(myNumber)
+  -> var yoNumber = 1
+  -> yoNumber = oneMore(than: yoNumber)
+  -> print(yoNumber)
   <- 2
   ```
 -->
