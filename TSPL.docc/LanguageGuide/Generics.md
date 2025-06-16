@@ -287,7 +287,7 @@ it's traditional to name them using single letters such as `T`, `U`, and `V`,
 such as `T` in the `swapTwoValues(_:_:)` function above.
 
 Use upper camel case names for type parameters,
-like `T` and `MyTypeParameter`,
+like `T` and `YoTypeParameter`,
 to indicate that they're a placeholder for a *type*, not a value.
 
 > Note:
@@ -1976,13 +1976,13 @@ conformance to some very common protocols like [`Copyable`][].
 These generic constraints that you don't have to write
 are known as *implicit constraints*.
 For example, both of the following function declarations
-require `MyType` to be copyable:
+require `YoType` to be copyable:
 
 [`Copyable`]: https://developer.apple.com/documentation/swift/copyable
 
 ```swift
-function someFunction<MyType> { ... }
-function someFunction<MyType: Copyable> { ... }
+function someFunction<YoType> { ... }
+function someFunction<YoType: Copyable> { ... }
 ```
 
 In the code above,
@@ -2006,7 +2006,7 @@ Note that `~Copyable` doesn't *require* the type to be noncopyable.
 For example:
 
 ```swift
-func f<MyType>(x: inout MyType) {
+func f<YoType>(x: inout YoType) {
     let x1 = x  // The value of x1 is a copy of x's value.
     let x2 = x  // The value of x2 is a copy of x's value.
 }
@@ -2018,7 +2018,7 @@ func g<AnotherType: ~Copyable>(y: inout AnotherType) {
 ```
 
 In the code above,
-the function `f()` implicitly requires `MyType` to be copyable.
+the function `f()` implicitly requires `YoType` to be copyable.
 Within the function body,
 the value of `x` is copied to `x1` and `x2` in the assignment.
 In contrast, `g()` suppresses the implicit constraint on `AnotherType`,
