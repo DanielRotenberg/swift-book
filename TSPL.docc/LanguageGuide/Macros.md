@@ -46,7 +46,7 @@ and you write any arguments to the macro in parentheses after its name.
 For example:
 
 ```swift
-func myFunction() {
+func yoFunction() {
     print("Currently running \(#function)")
     #warning("Something's wrong")
 }
@@ -57,8 +57,8 @@ In the first line,
 When you compile this code,
 Swift calls that macro's implementation,
 which replaces `#function` with the name of the current function.
-When you run this code and call `myFunction()`,
-it prints "Currently running myFunction()".
+When you run this code and call `yoFunction()`,
+it prints "Currently running yoFunction()".
 In the second line,
 `#warning` calls the [`warning(_:)`][] macro from the Swift standard library
 to produce a custom compile-time warning.
@@ -477,7 +477,7 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "MyPackage",
+    name: "YoPackage",
     platforms: [ .iOS(.v17), .macOS(.v13)],
     // ...
 )
@@ -494,7 +494,7 @@ changing the names to match your project:
 targets: [
     // Macro implementation that performs the source transformations.
     .macro(
-        name: "MyProjectMacros",
+        name: "YoProjectMacros",
         dependencies: [
             .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
             .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
@@ -502,13 +502,13 @@ targets: [
     ),
 
     // Library that exposes a macro as part of its API.
-    .target(name: "MyProject", dependencies: ["MyProjectMacros"]),
+    .target(name: "YoProject", dependencies: ["YoProjectMacros"]),
 ]
 ```
 
 The code above defines two targets:
-`MyProjectMacros` contains the implementation of the macros,
-and `MyProject` makes those macros available.
+`YoProjectMacros` contains the implementation of the macros,
+and `YoProject` makes those macros available.
 
 The implementation of a macro
 uses the [SwiftSyntax][] module to interact with Swift code
@@ -582,7 +582,7 @@ and lists the macros that the target defines:
 import SwiftCompilerPlugin
 
 @main
-struct MyProjectMacros: CompilerPlugin {
+struct YoProjectMacros: CompilerPlugin {
     var providingMacros: [Macro.Type] = [FourCharacterCode.self]
 }
 ```
@@ -718,7 +718,7 @@ let source: SourceFileSyntax =
     """
 
 let file = BasicMacroExpansionContext.KnownSourceFile(
-    moduleName: "MyModule",
+    moduleName: "YoModule",
     fullFilePath: "test.swift"
 )
 
