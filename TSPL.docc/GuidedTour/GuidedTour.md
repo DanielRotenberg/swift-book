@@ -52,18 +52,18 @@ This means you can use constants to name a value
 that you determine once but use in many places.
 
 ```swift
-var myVariable = 42
-myVariable = 50
-let myConstant = 42
+var yoVariable = 42
+yoVariable = 50
+let yoConstant = 42
 ```
 
 <!--
   - test: `guided-tour`
 
   ```swifttest
-  -> var myVariable = 42
-  -> myVariable = 50
-  -> let myConstant = 42
+  -> var yoVariable = 42
+  -> yoVariable = 50
+  -> let yoConstant = 42
   ```
 -->
 
@@ -73,7 +73,7 @@ However, you don't always have to write the type explicitly.
 Providing a value when you create a constant or variable
 lets the compiler infer its type.
 In the example above,
-the compiler infers that `myVariable` is an integer
+the compiler infers that `yoVariable` is an integer
 because its initial value is an integer.
 
 If the initial value doesn't provide enough information
@@ -1191,7 +1191,7 @@ class Square: NamedShape {
         return "A square with sides of length \(sideLength)."
     }
 }
-let test = Square(sideLength: 5.2, name: "my test square")
+let test = Square(sideLength: 5.2, name: "test square")
 test.area()
 test.simpleDescription()
 ```
@@ -1217,7 +1217,7 @@ test.simpleDescription()
              return "A square with sides of length \(sideLength)."
          }
      }
-  -> let test = Square(sideLength: 5.2, name: "my test square")
+  -> let test = Square(sideLength: 5.2, name: "test square")
   >> let testArea =
   -> test.area()
   >> print(testArea)
