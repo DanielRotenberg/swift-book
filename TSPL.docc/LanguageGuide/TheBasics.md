@@ -1467,11 +1467,11 @@ after accessing the value it contains,
 you can use the same name for the new constant or variable:
 
 ```swift
-let myNumber = Int(possibleNumber)
-// Here, myNumber is an optional integer
-if let myNumber = myNumber {
-    // Here, myNumber is a non-optional integer
-    print("My number is \(myNumber)")
+let yoNumber = Int(possibleNumber)
+// Here, yoNumber is an optional integer
+if let yoNumber = yoNumber {
+    // Here, yoNumber is a non-optional integer
+    print("My number is \(yoNumber)")
 }
 // Prints "My number is 123"
 ```
@@ -1480,23 +1480,23 @@ if let myNumber = myNumber {
   - test: `optionals`
 
   ```swifttest
-  -> let myNumber = Int(possibleNumber)
-  // Here, myNumber is an optional integer
-  -> if let myNumber = myNumber {
-         // Here, myNumber is a non-optional integer
-         print("My number is \(myNumber)")
+  -> let yoNumber = Int(possibleNumber)
+  // Here, yoNumber is an optional integer
+  -> if let yoNumber = yoNumber {
+         // Here, yoNumber is a non-optional integer
+         print("My number is \(yoNumber)")
      }
   <- My number is 123
   ```
 -->
 
-This code starts by checking whether `myNumber` contains a value,
+This code starts by checking whether `yoNumber` contains a value,
 just like the code in the previous example.
-If `myNumber` has a value,
-the value of a new constant named `myNumber` is set to that value.
+If `yoNumber` has a value,
+the value of a new constant named `yoNumber` is set to that value.
 Inside the body of the `if` statement,
-writing `myNumber` refers to that new non-optional constant.
-Writing `myNumber` before or after the `if` statement
+writing `yoNumber` refers to that new non-optional constant.
+Writing `yoNumber` before or after the `if` statement
 refers to the original optional integer constant.
 
 Because this kind of code is so common,
@@ -1506,8 +1506,8 @@ The new, unwrapped constant or variable
 implicitly uses the same name as the optional value.
 
 ```swift
-if let myNumber {
-    print("My number is \(myNumber)")
+if let yoNumber {
+    print("My number is \(yoNumber)")
 }
 // Prints "My number is 123"
 ```
@@ -1516,20 +1516,20 @@ if let myNumber {
   - test: `optionals`
 
   ```swifttest
-  -> if let myNumber {
-         print("My number is \(myNumber)")
+  -> if let yoNumber {
+         print("My number is \(yoNumber)")
      }
   <- My number is 123
   ```
 -->
 
 You can use both constants and variables with optional binding.
-If you wanted to manipulate the value of `myNumber`
+If you wanted to manipulate the value of `yoNumber`
 within the first branch of the `if` statement,
-you could write `if var myNumber` instead,
+you could write `if var yoNumber` instead,
 and the value contained within the optional
 would be made available as a variable rather than a constant.
-Changes you make to `myNumber` inside the body of the `if` statement
+Changes you make to `yoNumber` inside the body of the `if` statement
 apply only to that local variable,
 *not* to the original, optional constant or variable that you unwrapped.
 
