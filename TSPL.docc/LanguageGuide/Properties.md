@@ -1685,17 +1685,17 @@ and they're written in the same way as computed properties.
 You can apply a property wrapper to a local stored variable,
 but not to a global variable or a computed variable.
 For example,
-in the code below, `myNumber` uses `SmallNumber` as a property wrapper.
+in the code below, `yoNumber` uses `SmallNumber` as a property wrapper.
 
 ```swift
 func someFunction() {
-    @SmallNumber var myNumber: Int = 0
+    @SmallNumber var yoNumber: Int = 0
 
-    myNumber = 10
-    // now myNumber is 10
+    yoNumber = 10
+    // now yoNumber is 10
 
-    myNumber = 24
-    // now myNumber is 12
+    yoNumber = 24
+    // now yoNumber is 12
 }
 ```
 
@@ -1704,15 +1704,15 @@ func someFunction() {
 
   ```swifttest
   -> func someFunction() {
-  ->     @SmallNumber var myNumber: Int = 0
+  ->     @SmallNumber var yoNumber: Int = 0
 
-         myNumber = 10
-         // now myNumber is 10
-  >>     print(myNumber)
+         yoNumber = 10
+         // now yoNumber is 10
+  >>     print(yoNumber)
 
-         myNumber = 24
-         // now myNumber is 12
-  >>     print(myNumber)
+         yoNumber = 24
+         // now yoNumber is 12
+  >>     print(yoNumber)
      }
   >> someFunction()
   << 10
@@ -1721,9 +1721,9 @@ func someFunction() {
 -->
 
 Like when you apply `SmallNumber` to a property,
-setting the value of `myNumber` to 10 is valid.
+setting the value of `yoNumber` to 10 is valid.
 Because the property wrapper doesn't allow values higher than 12,
-it sets `myNumber` to 12 instead of 24.
+it sets `yoNumber` to 12 instead of 24.
 
 <!--
   The discussion of local variables with property wrappers
