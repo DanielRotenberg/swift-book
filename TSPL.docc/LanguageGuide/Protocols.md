@@ -792,11 +792,11 @@ method or property declarations that implement the protocol's requirements.
 For example:
 
 ```swift
-struct MyStruct: Copyable {
+struct YoStruct: Copyable {
     var counter = 12
 }
 
-extension MyStruct: BitwiseCopyable { }
+extension YoStruct: BitwiseCopyable { }
 ```
 
 The code above defines a new structure.
@@ -1153,8 +1153,8 @@ extension Array: TextRepresentable where Element: TextRepresentable {
         return "[" + itemsAsText.joined(separator: ", ") + "]"
     }
 }
-let myDice = [d6, d12]
-print(myDice.textualDescription)
+let yoDice = [d6, d12]
+print(yoDice.textualDescription)
 // Prints "[A 6-sided dice, A 12-sided dice]"
 ```
 
@@ -1168,8 +1168,8 @@ print(myDice.textualDescription)
            return "[" + itemsAsText.joined(separator: ", ") + "]"
         }
      }
-     let myDice = [d6, d12]
-  -> print(myDice.textualDescription)
+     let yoDice = [d6, d12]
+  -> print(yoDice.textualDescription)
   <- [A 6-sided dice, A 12-sided dice]
   ```
 -->
